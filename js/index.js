@@ -5,5 +5,7 @@ fetch(
   .then((datos) => queParadaEs(datos));
 
 const queParadaEs = (paradas) => {
-  console.log(`El bus te tarda ${paradas.data.ibus[0]["text-ca"]}`);
+  console.log(
+    `El bus de la linea ${paradas.data.ibus[0]["line"]} te tarda ${paradas.data.ibus[0]["text-ca"]}`
+  );
 };
