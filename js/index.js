@@ -4,8 +4,7 @@ fetch(
   .then((response) => response.json())
   .then((datos) => queParadaEs(datos));
 
-const queParadaEs = (paradas) => {
-  console.log(
-    `El bus de la linea ${paradas.data.ibus[0]["line"]} te tarda ${paradas.data.ibus[0]["text-ca"]}`
-  );
+const queParadaEs = (datos) => {
+  const textos = document.querySelector(`.cuerpo`);
+  textos.textContent = `El bus de la linea ${datos.data.ibus[0]["line"]} te tarda ${datos.data.ibus[0]["text-ca"]}`;
 };
